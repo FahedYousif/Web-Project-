@@ -1,0 +1,18 @@
+<div class="tileContainer">
+    <h1 class="title">Update question {{Faq.id}}</h1>
+    <form action="/update-faq/{{Faq.id}}" method="post">
+        <input type="hidden" name="_csrf" value="{{token}}">
+        <div class="control">
+            Title: <input name="title" class="input" value="{{Faq.title}}"><br>
+            Text: <textarea name="postText" class="textarea">{{Faq.postText}}</textarea><br>
+            Comment: <textarea name="comment" class="textarea" placeholder="Write your comment here"></textarea><br>
+        </div>
+        {{#each error}}
+            <p class="help is-danger">{{this}}</p> 
+        {{/each}}
+        <div class="control">
+            <button class="button is-link" type="submit">Submit</button>
+            <a href="/faq" class="button is-light">Cancel</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<div class="centerContainer">
+    <h1>LOGIN</h1>
+    <form action="/login" method="POST">
+        <input type="hidden" name="_csrf" value="{{token}}">
+        <div class="field">
+            <p class="control has-icons-left has-icons-right">
+                <input required class="input" type="text" name="username" placeholder="Username">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-user-circle"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control has-icons-left">
+                <input required class="input" type="password" name="password" placeholder="Password">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </p>
+            {{#each error}}
+                <p class="help is-danger">{{this}}</p> 
+            {{/each}}
+        </div>
+        <div>
+            <input class="button is-success" type="submit" value="Login">
+        </div>
+    </form>
+</div>
+
+

@@ -1,0 +1,17 @@
+<div class="tileContainer">
+    <h1 class="title">Update blogpost post {{Blogpost.id}}</h1>
+    <form action="/update-blogpost/{{Blogpost.id}}" method="post">
+        <input type="hidden" name="_csrf" value="{{token}}">
+        <div class="control">
+            Title: <input name="title" class="input" value="{{Blogpost.title}}"><br>
+            Text: <textarea name="postText" class="textarea">{{Blogpost.postText}}</textarea><br>
+        </div>
+        {{#each error}}
+            <p class="help is-danger">{{this}}</p> 
+        {{/each}}
+        <div class="control">
+            <button class="button is-link" type="submit">Submit</button>
+            <a href="/blogpost" class="button is-light">Cancel</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="tileContainer">
+    <h1 class="title">Update guestbook post {{Guestbook.id}}</h1>
+    <form action="/update-guestbook/{{Guestbook.id}}" method="post">
+        <input type="hidden" name="_csrf" value="{{token}}">
+        <div class="control">
+            Title: <input name="title" class="input" value="{{Guestbook.title}}"><br>
+            Text: <textarea name="postText" class="textarea">{{Guestbook.postText}}</textarea><br>
+        </div>
+        {{#each error}}
+            <p class="help is-danger">{{this}}</p> 
+        {{/each}}
+        <div class="control">
+            <button class="button is-link" type="submit">Submit</button>
+            <a href="/guestbook/1" class="button is-light">Cancel</a>
+        </div>
+    </form>
+</div>

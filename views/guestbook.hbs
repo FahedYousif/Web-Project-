@@ -1,0 +1,62 @@
+<div class="tileContainer">
+  <h1 class="title">Guestbook</h1>
+  <a href="/createGuestbooks" class="button is-primary">Create a guestbook post</a>
+  {{#each Guestbook}}
+    <div class="tile is-ancestor is-vertical">
+      <div class="tile is-parent">
+        <div class="tile is-child box">
+          <p class="title">{{title}}</p>
+          <p>{{postText}}</p>
+          {{#if ../isLoggedIn}}
+          <div class="level-right">
+            <form action="/delete-guestbook/{{id}}" method="POST">
+            <input type="hidden" name="_csrf" value="{{../token}}">
+              <button class="button is-danger" type="submit">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </form>
+            <form action="/update-guestbook/{{id}}" method="GET">
+              <button class="button is-info" type="submit">
+                <i class="fas fa-edit"></i>
+              </button>
+            </form>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+  {{#unless Guestbook.length}}
+    <p>There is nothing here, try previous page</p>
+    <nav class="pagination" role="navigation" aria-label="pagination">
+      <a class="pagination-previous" href="{{previousPage}}">Previous</a>
+      <ul class="pagination-list">
+        <li>
+          <a class="pagination-link" href="1" aria-label="Goto page 1">1</a>
+        </li>
+        <li>
+          <a class="pagination-link" href="2" aria-label="Goto page 2">2</a>
+        </li>
+        <li>
+          <a class="pagination-link" href="3" aria-label="Goto page 3">3</a>
+        </li>
+      </ul>
+    </nav>
+  {{else}}
+    <nav class="pagination" role="navigation" aria-label="pagination">
+      <a class="pagination-previous" href="{{previousPage}}">Previous</a>
+      <a class="pagination-next" href="{{nextPage}}">Next page</a>
+      <ul class="pagination-list">
+        <li>
+          <a class="pagination-link" href="1" aria-label="Goto page 1">1</a>
+        </li>
+        <li>
+          <a class="pagination-link" href="2" aria-label="Goto page 2">2</a>
+        </li>
+        <li>
+          <a class="pagination-link" href="3" aria-label="Goto page 3">3</a>
+        </li>
+      </ul>
+    </nav>
+  {{/unless}}
+</div>

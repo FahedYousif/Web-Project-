@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HawkarNotes</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <link rel="stylesheet" type="text/css" href="/layout.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <body>
+        <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/"><strong>HawkarNotes</strong></a>
+                <a role="button" class="navbar-burger burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a href="/blogpost" class="navbar-item">Blogpost</a>
+                    <a href="/guestbook/1" class="navbar-item">Guestbook</a>
+                    <a href="/faq" class="navbar-item">Faq</a>
+                    <a href="/contact" class="navbar-item">Contact</a>
+                    <a href="/about" class="navbar-item">About</a>
+                </div>
+            </div>
+        </nav>
+        <div class="mainContainer">
+            {{{body}}}  
+        </div>
+        <footer>
+            <a href="#"><span class="fab fa-facebook-f has-text-link"></span></a>
+            <a href="#"><span class="fab fa-twitter has-text-info"></span></a>
+            <a href="#"><span class="fab fa-instagram has-text-warning"></span></a>
+            <a href="#"><span class="fab fa-youtube has-text-danger"></span></a> <br>
+            {{#if isLoggedIn}}
+                <form action="/logout" method="POST">
+                    <input class="button is-danger" type="submit" value="Logout" style="text-align:center">
+                </form>
+            {{else}}
+                <a href="/login" class="has-text-link">Login</a>
+            {{/if}}
+        </footer>
+    </body>
+
+</html>

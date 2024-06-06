@@ -1,0 +1,64 @@
+html{ 
+    background: url('/myBackground.jpg') no-repeat center center fixed;
+    background-position: fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0.9;
+    background-color: #363636;
+}
+
+#textOutline{
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+.centerContent{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.aboutImage{
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
+}
+
+.contactImage{
+    width: 280px;
+    height: 170px;
+    border-radius: 30px;
+}
+
+.mainContainer {
+    margin-bottom: 60px;
+}
+
+.centerContainer{
+    margin: 5vh;
+}
+
+.tileContainer{
+    margin: 5vh;
+}
+
+.pagination-previous{
+    background-color: whitesmoke;
+}
+
+.pagination-next{
+    background-color: whitesmoke;
+}
+
+.pagination-link{
+    background-color: whitesmoke;
+}
